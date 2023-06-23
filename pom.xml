@@ -79,7 +79,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>scala_jenkins.loadPostgrestoHive</mainClass>
+                            <mainClass>scala_jenkins.Loadfirst</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
