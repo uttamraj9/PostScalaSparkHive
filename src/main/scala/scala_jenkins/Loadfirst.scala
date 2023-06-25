@@ -11,8 +11,12 @@ object Loadfirst {
     println(df.show(10))
     println("Automated")
 
-    //df_IT.write.mode("overwrite").saveAsTable("product.IT")
+
+    df.write.mode("overwrite").saveAsTable("product.dummy2")
+    println("In Hive")
   }
 
 }
-// spark-submit --master local --jars /var/lib/jenkins/workspace/nagaranipysparkdryrun/lib/postgresql-42.5.3.jar --class scala_jenkins.loadPostgrestoHive target/MiniPrjScala-1.0-SNAPSHOT.jar
+//spark-submit --master local --jars /var/lib/jenkins/workspace/nagaranipysparkdryrun/lib/postgresql-42.5.3.jar --class scala_jenkins.loadPostgrestoHive target/MiniPrjScala-1.0-SNAPSHOT.jar
+
+
