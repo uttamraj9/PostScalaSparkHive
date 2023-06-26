@@ -46,7 +46,7 @@ object Loadfirst {
 
 
     sorted_df.write.mode( "overwrite").saveAsTable("product.dummy")
-    //println("In Hive")
+    println("In Hive")
   }
 
 }
