@@ -50,6 +50,8 @@ object Loadfirst {
   }
 
 }
+
+// mvn package
 //spark-submit --master local --jars /var/lib/jenkins/workspace/nagaranipysparkdryrun/lib/postgresql-42.5.3.jar --class scala_jenkins.loadPostgrestoHive target/MiniPrjScala-1.0-SNAPSHOT.jar
 
 
