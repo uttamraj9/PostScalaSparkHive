@@ -12,7 +12,7 @@ object Increamentalload {
       .enableHiveSupport()
       .getOrCreate()
 
-    val maxIdDF = spark.sql("SELECT max(id) FROM product.dummy")
+    val maxIdDF = spark.sql("SELECT max(id) FROM product.emp_info_Scala")
     val maxId = maxIdDF.head().getInt(0).toLong
     println(maxId)
 
@@ -56,7 +56,7 @@ object Increamentalload {
     sorted_df.show(10)
 
 
-    sorted_df.write.mode("append").saveAsTable("product.dummy")
+    sorted_df.write.mode("append").saveAsTable("product.emp_info_Scala")
     println("In Hive")
 
 

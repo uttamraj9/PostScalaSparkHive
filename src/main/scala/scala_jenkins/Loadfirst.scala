@@ -45,7 +45,7 @@ object Loadfirst {
     sorted_df.show(10)
 
 
-    sorted_df.write.mode( "overwrite").saveAsTable("product.dummy")
+    sorted_df.write.mode( "overwrite").saveAsTable("product.emp_info_Scala")
     println("In Hive")
   }
 
