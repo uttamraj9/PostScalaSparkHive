@@ -74,4 +74,6 @@ object Increamentalload {
   }
 
 }
+//
+
 // sudo -u hdfs hdfs dfs -chmod -R 777 /warehouse/tablespace/external/hive/product.db/dummy
