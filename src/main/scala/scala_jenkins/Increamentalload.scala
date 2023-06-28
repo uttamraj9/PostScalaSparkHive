@@ -56,7 +56,7 @@ object Increamentalload {
     sorted_df.show(10)
 
 
-    sorted_df.write.mode("append").saveAsTable("product.emp_info_Scala")
+    sorted_df.write.mode("Append").saveAsTable("product.emp_info_Scala")
     println("In Hive")
     println("Sucess")
 
