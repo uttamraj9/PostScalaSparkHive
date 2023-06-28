@@ -58,6 +58,7 @@ object Increamentalload {
 
     sorted_df.write.mode("append").saveAsTable("product.emp_info_Scala")
     println("In Hive")
+    println("Sucess")
 
 
     /* query = 'SELECT * FROM emp_details WHERE "ID" > '+str(m_id)
