@@ -2,24 +2,23 @@ package scala_jenkins
 
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions._
-import org.apache.spark.sql.expressions.Window
 
 object Loadfirst {
 
   def main(args: Array[String]): Unit = {
     val spark: SparkSession = SparkSession.builder().master("local[*]").appName("MiniPrjScala").enableHiveSupport().getOrCreate()
-    val df = spark.read.format("jdbc").option("url", "jdbc:postgresql://ec2-3-9-191-104.eu-west-2.compute.amazonaws.com:5432/testdb").option("dbtable", "emp_info_scala").option("driver", "org.postgresql.Driver").option("user", "consultants").option("password", "WelcomeItc@2022").load()
+    val df = spark.read.format("jdbc").option("url", "jdbc:postgresql://ec2-3-9-191-104.eu-west-2.compute.amazonaws.com:5432/testdb").option("dbtable", "people").option("driver", "org.postgresql.Driver").option("user", "consultants").option("password", "WelcomeItc@2022").load()
     println(df.printSchema())
     println(df.show(10))
     println("Automated")
 
     // Define the calculation of age
-    val df_age = df.withColumn("DOB", to_date(col("DOB"), "M/d/yyyy")).withColumn("age", floor(datediff(current_date(), col("DOB")) / 365))
+    //val df_age = df.withColumn("DOB", to_date(col("DOB"), "M/d/yyyy")).withColumn("age", floor(datediff(current_date(), col("DOB")) / 365))
 
-    df_age.show(10)
+    df.show(10)
 
     // Define the increments based on departments and gender
-    val department_increment_expr = when(col("dept") === "IT", 0.1)
+   /* val department_increment_expr = when(col("dept") === "IT", 0.1)
       .when(col("dept") === "Marketing", 0.12)
       .when(col("dept") === "Purchasing", 0.15)
       .when(col("dept") === "Operations", 0.18)
@@ -43,9 +42,9 @@ object Loadfirst {
     // Sort the DataFrame by ID
     val sorted_df = df_increment.orderBy("ID")
     sorted_df.show(10)
+*/
 
-
-    sorted_df.write.mode( "overwrite").saveAsTable("product.emp_info_Scala")
+    df.write.mode( "overwrite").saveAsTable("usuk30.testscalaspark")
     println("In Hive")
   }
 
