@@ -44,7 +44,7 @@ object Loadfirst {
     sorted_df.show(10)
 */
 
-    df.write.mode( "overwrite").saveAsTable("usuk30.testscalaspark")
+    df.write.mode( "overwrite").saveAsTable("usukprjdb.testscalaspark")
     println("In Hive")
   }
 
